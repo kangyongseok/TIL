@@ -39,3 +39,62 @@ user 가 나의 서비스를 사용할 때 번거로운 로그인 절차 필요 
 
 Blog: [How ReactJS Facebook OAuth Login](http://code-reading.tistory.com/65)<br/>
 DEMO: [Git Demo](https://kangyongseok.github.io/Facebook-Login/)
+
+
+
+#181121
+=============
+> ## Object
+객체는 어떤것을 의미하며 이러한 단위화된 표현을 통해 개발을 더 쉽게 할 수 있다.
+
+객체에는 여러가지 속성을 부여할 수 있으며, 특정동작을 할수 있도록 메소드를 부여할 수도있다.
+
+```javascript
+let kang_yong_seok = {
+            name: "Kang Yong Seok",
+            height: 165,
+            wight: 60,
+            position: "FrontEnd Developer",
+            eat: () => {this.height > 65 ? console.log("과체중입니다.") : console.log("표준입니다.")}
+        }
+
+        kang_yong_seok.eat(); // 표준입니다.
+        console.log(kang_yong_seok.name) // Kang Yong Seok
+        console.log(kang_yong_seok) // 객체정보
+```
+
+> ## Class
+클래스는 일종의 틀이다. 위의 객체는 한사람의 특징에 대해서만 나타낼수 있다면 클래스는 일정한 틀을 정해놓고 그 틀 안에서는 얼마든지 다양한 사람의 객체를 나타낼 수 있다. 이것은 템플릿처럼 사용이 가능하다.
+
+클래스로 생성된 객체를 클래스의 인스턴스 라고도 한다.
+
+JavaScript 에서는 클래스 개념이 없다. 모두 객체에 기반하고 있기때문이다. 그러나 Prototype 을 활용하면 클래스개념과 비슷하게 생성해 낼 수는 있다.
+
+```javascript
+let People = function() {};
+
+        People.prototype = {
+            name:String,
+            age: Number,
+            height:Number,
+            weight:Number,
+            position:String,
+            eat:Function
+        }
+
+        let kang_yong_seok = new People();
+
+        kang_yong_seok.name = "Kang Yong Seok";
+        kang_yong_seok.height = 165;
+        kang_yong_seok.weight = 60
+        kang_yong_seok.age = 31
+
+        let hong_gil_dong = new People();
+
+        hong_gil_dong.name = "Hong Gil Dong";
+        hong_gil_dong.position = "hero";
+        hong_gil_dong.height = 170;
+
+        console.log(kang_yong_seok) // 객체정보
+        console.log(hong_gil_dong) 
+```
